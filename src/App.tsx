@@ -71,13 +71,28 @@ function App() {
 
   return (
     <div className="tic-tac-toe-container">
+      <div className="title">
+        <div className="tic">
+          <span className="t">T</span>ic
+        </div>
+        <div className="tac">
+          <span className="t">T</span>ac
+        </div>
+        <div className="toe">
+          <span className="t">T</span>oe
+        </div>
+      </div>
       <h1>Tic Tac Toe</h1>
-      <h3>
-        Next Player: <span>{player}</span>
-      </h3>
-      <h3>
-        Winner: <span>{winner}</span>
-      </h3>
+      {winner === NONE && (
+        <h3 className="text-next-player">
+          Next Player: <span>{player}</span>
+        </h3>
+      )}
+      {winner !== NONE && (
+        <h3 className="text-winner">
+          Winner: <span>{winner}</span>
+        </h3>
+      )}
 
       <button
         className="btn-reset"

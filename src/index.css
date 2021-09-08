@@ -19,24 +19,86 @@ code {
   flex-direction: column;
 }
 
+.tic-tac-toe-container .title .tic,
+.tac,
+.toe {
+  display: inline-block;
+  margin: 0.5rem 0.5rem;
+}
+
+.tic-tac-toe-container .tic {
+  font-size: 3rem;
+  animation: swag;
+  animation-duration: 3s;
+  animation-iteration-count: infinite;
+}
+
+.tic-tac-toe-container .tac {
+  font-size: 3rem;
+  animation: swag2;
+  animation-duration: 5s;
+  animation-iteration-count: infinite;
+}
+
+.tic-tac-toe-container .toe {
+  font-size: 3rem;
+  animation: swag;
+  animation-duration: 4s;
+  animation-iteration-count: infinite;
+}
+
+.tic-tac-toe-container .t {
+  color: #fdd835;
+}
+
+.tic-tac-toe-container h1 {
+  margin-top: 0.5rem;
+}
+
 .tic-tac-toe-container h3 {
   font-weight: lighter;
   margin-bottom: 0;
 }
 
+.tic-tac-toe-container .text-next-player {
+  background: #fdd835;
+  padding: 0.5rem 1rem;
+  border-radius: 2rem;
+  margin-top: 0.5rem;
+}
+
+.tic-tac-toe-container .text-winner {
+  margin-top: 1rem;
+  font-size: 3rem;
+  animation: text-winner;
+  animation-duration: 1s;
+  font-weight: bold;
+}
+
+@keyframes text-winner {
+  from {
+    font-size: 1rem;
+    font-weight: normal;
+  }
+  to {
+    font-size: 3rem;
+    font-weight: bold;
+  }
+}
 .tic-tac-toe-container .square-container {
   display: flex;
   flex-wrap: wrap;
-  background-color: grey;
+  background-color: #fdd835;
   width: 17.5rem;
   height: fit-content;
   margin-top: 1rem;
   padding: 2rem 0 2rem 2rem;
+  border-radius: 0.5rem;
 }
 
 .tic-tac-toe-container .btn-reset {
   margin-top: 1rem;
-  background-color: blue;
+  background-color: #f44336;
   border: none;
   color: white;
   padding: 0.5rem 2rem;
@@ -47,13 +109,41 @@ code {
   visibility: hidden;
 }
 
+.tic-tac-toe-container .btn-reset:hover {
+  font-size: 1rem;
+  transition: 0.3s;
+}
+
 .square {
   display: flex;
   justify-content: center;
   align-items: center;
-  border: 1px solid white;
+  border: 1.7px solid white;
   width: 5rem;
   height: 5rem;
-  color: white;
+  color: #000;
   font-size: 3rem;
+  transition: 0.3s;
+}
+
+@keyframes swag {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes swag2 {
+  from {
+    transform: rotate(360deg);
+  }
+  to {
+    transform: rotate(0deg);
+  }
+}
+
+.square:hover {
+  font-size: 5rem;
 }
